@@ -12,14 +12,14 @@ function Header() {
       <div className="flex items-center px-6 py-4 relative">
         <button
           onClick={() => setShowDropdown(!showDropdown)}
-          className="flex items-center gap-1 text-xl text-gray-700"
+          className="flex items-center gap-1 text-xl text-gray-200"
         >
           {model}
           <MdOutlineKeyboardArrowDown size={18} />
         </button>
   
         {showDropdown && (
-          <div className="absolute top-14 left-6 bg-white shadow-lg rounded-xl py-2 w-48">
+          <div className="absolute top-14 left-6 bg-bg-[#1e1f20] shadow-lg rounded-xl py-2 w-48">
             {models.map((m) => (
               <div
                 key={m}
@@ -27,7 +27,7 @@ function Header() {
                   setModel(m)
                   setShowDropdown(false)
                 }}
-                className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                className="px-4 py-2 hover:bg-gray-700 text-gray-200 cursor-pointer"
               >
                 {m}
               </div>

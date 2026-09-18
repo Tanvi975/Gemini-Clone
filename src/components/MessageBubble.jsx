@@ -7,8 +7,8 @@ function MessageBubble({ text, sender }) {
             <div
               className={
                 isUser
-                  ? "bg-gray-200 text-black rounded-2xl px-4 py-2 max-w-lg"
-                  : "text-black max-w-2xl"
+                  ? "bg-gray-700 text-white rounded-2xl px-4 py-2 max-w-lg"
+                  : "text-white max-w-2xl"
               }
             >
               {text}
