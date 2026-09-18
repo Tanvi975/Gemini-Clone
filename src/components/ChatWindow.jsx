@@ -1,4 +1,5 @@
 import MessageBubble from './MessageBubble'
+import TypingIndicator from "./TypingIndicator"
 
 function ChatWindow() {
   const dummyMessages = [
@@ -11,6 +12,7 @@ function ChatWindow() {
       {dummyMessages.map((msg, index) => (
         <MessageBubble key={index} text={msg.text} sender={msg.sender} />
       ))}
+      <TypingIndicator />
     </div>
   )
 }
