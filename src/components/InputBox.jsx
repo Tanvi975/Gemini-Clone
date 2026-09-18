@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { SendHorizontal } from 'lucide-react'
+import { FaArrowCircleUp } from "react-icons/fa";
 import { useChat } from '../context/ChatContext'
 
 function InputBox() {
@@ -28,7 +28,7 @@ function InputBox() {
     />
     <button onClick={handleSend} className="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center">
     
-    <SendHorizontal size={18} />
+    <FaArrowCircleUp size={18} />
     </button>
     </div>
   )

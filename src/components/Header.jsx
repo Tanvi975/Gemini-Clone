@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import { ChevronDown } from 'lucide-react'
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { useChat } from '../context/ChatContext'
 
 function Header() {
-    const [model, setModel] = useState("Gemini Flash")
+    const {model, setModel} = useChat()
     const [showDropdown, setShowDropdown] = useState(false)
   
     const models = ["Gemini Flash-Lite", "Gemini Flash", "Gemini Pro", "Extended Thinking"]
@@ -14,7 +15,7 @@ function Header() {
           className="flex items-center gap-1 text-xl text-gray-700"
         >
           {model}
-          <ChevronDown size={18} />
+          <MdOutlineKeyboardArrowDown size={18} />
         </button>
   
         {showDropdown && (
