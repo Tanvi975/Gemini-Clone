@@ -4,14 +4,14 @@ import { useChat } from '../context/ChatContext'
 
 
 function ChatWindow() {
-  const { messages } = useChat()
+  const { messages, loading } = useChat()
 
   return (
     <div className="flex-1 overflow-y-auto px-6 py-4 flex flex-col gap-4">
       {messages.map((msg, index) => (
         <MessageBubble key={index} text={msg.text} sender={msg.sender} />
       ))}
-      <TypingIndicator />
+      {loading && <TypingIndicator />}
     </div>
   )
 }

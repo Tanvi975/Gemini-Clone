@@ -1,17 +1,25 @@
+import { askGemini } from '../api'
 import { useState } from 'react'
-import { FaArrowCircleUp } from "react-icons/fa";
+import { LuCircleArrowUp } from "react-icons/lu";
 import { useChat } from '../context/ChatContext'
 
 function InputBox() {
   const [text, setText] = useState("")
-  const { messages, setMessages } = useChat()
+  const { messages, setMessages , loading, setLoading} = useChat()
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (text.trim() === "") return
-
+  
     const newMessage = { text: text, sender: "user" }
     setMessages([...messages, newMessage])
     setText("")
+  
+    setLoading(true)
+    const aiReply = await askGemini(text)
+    setLoading(false)
+  
+    const aiMessage = { text: aiReply, sender: "ai" }
+    setMessages((prev) => [...prev, aiMessage])
   }
 
   return (
@@ -28,7 +36,7 @@ function InputBox() {
     />
     <button onClick={handleSend} className="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center">
     
-    <FaArrowCircleUp size={18} />
+    <LuCircleArrowUp size={18} />
     </button>
     </div>
   )
