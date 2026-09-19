@@ -18,7 +18,7 @@ function App() {
       <Header />
       {isEmpty ? (
         <div className="flex-1 flex flex-col items-center justify-center px-6 gap-10">
-          <h1 className={`text-4xl font-medium ${isDark ? "text-gray-200" : "text-gray-800"}`}>
+          <h1 className={`text-2xl md:text-4xl font-medium ${isDark ? "text-gray-200" : "text-gray-800"}`}>
           What's on your mind, Tanvi?
     </h1>
         <InputBox />
