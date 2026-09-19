@@ -3,7 +3,7 @@ const ChatContext = createContext()
 
 export function ChatProvider({ children }){
   const [messages, setMessages] = useState([])
-  const [model, setModel] = useState("gemini-flash")
+  const [model, setModel] = useState("Gemini Flash")
   const [loading, setLoading] = useState(false)
   const [theme, setTheme] = useState("dark")
 
