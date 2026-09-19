@@ -1,6 +1,6 @@
 import ReactMarkdown from 'react-markdown'
 import { useChat } from '../context/ChatContext'
-function MessageBubble({ text, sender }) {
+function MessageBubble({ text, sender, imagePreview }) {
 
         const isUser = sender === "user"
         const { theme } = useChat()
@@ -15,6 +15,7 @@ function MessageBubble({ text, sender }) {
                   : `max-w-2xl prose ${isDark ? "prose-invert text-white" : "text-gray-900"}`
               }
             >
+              {imagePreview && <img src={imagePreview} alt="uploaded" className="max-w-xs rounded-lg mb-2" />}
               {isUser ? text : <ReactMarkdown>{text}</ReactMarkdown>}
             </div>
           </div>
